@@ -17,6 +17,24 @@ namespace Lab4
         static void Main(string[] args)
         {
             ImplementLoggingFuntion();
+            Boolean matched = false;
+            int wrong = 0;
+            while (!matched && wrong < 3)
+            {
+                String username = "t", password = "1", usr, pass;
+                Console.WriteLine("Enter username:");
+                usr = Console.ReadLine();
+                Console.WriteLine("Enter password:");
+                pass = Console.ReadLine();
+                if (usr != username || pass != password)
+                {
+                    wrong++;
+                    matched = true;
+                }
+            }
+            if (wrong == 3)
+                throw new Exception();
+
         }
 
         private static void ImplementLoggingFuntion()
